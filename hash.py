@@ -5,7 +5,7 @@ import pyfiglet
 ascii_banner = pyfiglet.figlet_format("Hash Cracker")
 print(ascii_banner)
  
-print("Algorithms available: MD5 | SHA1 | SHA512 | SGA224 | SHA384")
+print("Algorithms available: MD5 | SHA1 | SHA512 | SHA224 | SHA384")
 
 hash_type = str(input("what's the hash type ? "))
 wordlist_location=str(input("Enter wordlist location "))
@@ -35,7 +35,7 @@ for word in lists:
         hashed = hash_object.hexdigest()
         if hash ==  hashed:
             print(f"\033[1:32m HASH FOUND : {word} \n ")
-    elif hash_type == "SHA364" :
+    elif hash_type == "SHA384" :
         hash_object = hashlib.sha3_384(f"{word}".encode('utf-8'))
         hashed = hash_object.hexdigest()
         if hash ==  hashed:
@@ -43,5 +43,6 @@ for word in lists:
     else:
         print("Please choose for above option.")
     
+
 
 
